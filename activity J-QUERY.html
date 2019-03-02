@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+ 
+  <style>
+  .toggler { width: 500px; height: 200px; position: relative; }
+  #button { padding: .5em 1em; text-decoration: none; }
+  #effect {position: relative;  width: 240px;  padding: 1em; letter-spacing: 0; font-size: 1.2em; border: 1px solid #000; background: #eee; color: #333; }
+  .newClass { text-indent: 40px; letter-spacing: .4em; width: 410px; height: 100px; padding: 30px; margin: 10px; font-size: 1.6em; }
+  </style>
+  
+  <style>
+    .toggler { width: 500px; height: 200px; position: relative; }
+    #button { padding: .5em 1em; text-decoration: none; }
+    #effect { width: 240px;  padding: 1em; border: 1px solid #000; background: #eee; color: #333; }
+    .newClass { text-indent: 40px; letter-spacing: .4em; width: 410px; height: 120px; padding: 30px; margin: 10px; font-size: 1.1em; }
+  </style>
+  <style> 
+#panel, #flip {
+  padding: 5px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #555;
+  color: white;
+  border: solid 1px #666;
+  border-radius: 3px;
+}
+
+#panel {
+  padding: 50px;
+  display: none;
+}
+</style>
+  
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+<script> 
+$(document).ready(function(){
+    
+	$( function() {
+	$( "#button" ).on( "click", function() {
+	 $( "#effect" ).toggleClass( "newClass", 1000 );
+	  });
+	   });
+
+	   $( function() {
+    $( "#button" ).on( "click", function() {
+      $( "#Run" ).addClass( "newClass", 1000, callback );
+    });
+ 
+    function callback() {
+      setTimeout(function() {
+        $( "#Run" ).removeClass( "newClass" );
+      }, 1500 );
+    }
+  } );
+  
+	$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideDown(5000);
+  });
+  $("#stop").click(function(){
+    $("#panel").stop();
+  });
+});
+
+
+	$("#hide").click(function(){
+        $("p").hide();
+    });
+    $("#show").click(function(){
+        $("p").show();
+    });
+});
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeIn();
+    $("#div2").fadeIn("slow");
+    $("#div3").fadeIn(3000);
+  });
+});
+  
+
+
+</script> 
+</head>
+<body>
+
+<button>Click to fade in boxes</button><br><br>
+<button id="stop">Stop sliding</button>
+<button id="button" class="ui-state-default ui-corner-all">Run Effect</button>
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+
+
+
+
+<p>Student id : 725808</p>
+
+<p id="p1">Student Course : Computer Programmer</p>
+<p>
+My hobby is cooking.I like to cook different varities of food.My family members and friends also like the taste of food that cooked by me. During my school time, I have particiapted in many of the competetions and won many prizes . 
+In my free time ,I prefer to learn different cooking skills through videos in free time.I can make type of deeserts.
+</p>
+
+<div class="toggler">
+  <div id="effect" class="newClass ui-corner-all">Hi,I AM JASMEEN KAUR
+  </div>
+</div>
+
+<div id="flip">Click to slide down panel</div>
+<div id="panel">Hello Friends!</div>
+<div id="div1" style="width:40px;height:40px;display:none;background-color:red;"></div><br>
+<div id="div2" style="width:40px;height:40px;display:none;background-color:green;"></div><br>
+<div id="div3" style="width:40px;height:40px;display:none;background-color:blue;"></div>
+
+<br/ ><br/ ><br/ ><br/ ><br/ ><br/ ><br/ >
+<p>Date: <input type="text" id="datepicker"></p>
+</body>
+</html>
